@@ -8,89 +8,91 @@
 </head>
 <body id="notebookApp">
 
-    <div class="app-card">
-        
-        <div class="toolbar">
-            <select class="notebookSelect" name="File">
-                <option value="">File</option>
-                <option value="newDocument">New Document</option>
-                <option value="saveOption">Save</option>
-                <option value="loadOption">Load</option>
-                <option value="print">Print</option>
-            </select>
-            
-            <select class="notebookSelect" name="Edit">
-                <option value="">Edit</option>
-                <option value="cut">Cut</option>
-                <option value="copy">Copy</option>
-                <option value="paste">Paste</option>
-                <option value="selectAll">Select All</option>
-                <option value="find">Find</option>
-            </select>
-            
-            <select class="notebookSelect" name="Insert">
-                <option value="">Insert</option>
-                <option value="image">Image</option>
-                <option value="link">Link</option>
-            </select>
+    <div class="layout">
 
-            <select class="notebookSelect" name="Format">
-                <option value="">Format</option>
-                <option value="fontSize">Font Size</option>
-                <option value="fontColor">Font Color</option>
-            </select>
+        <div class="sidebar">
+            <div class="sidebar-header">
+                <span>Notes</span>
+                <button id="newDocument">+ New</button>
+            </div>
+            <ul id="notesList"></ul>
+        </div>
 
-            <select class="notebookSelect" name="View">
-                <option value="">View</option>
-                <option value="zoomIn">Zoom In</option>
-                <option value="zoomOut">Zoom Out</option>
-                <option value="fullScreen">Full Screen</option>
-            </select>
-            
-            <!-- Font settings grouped right into the top toolbar -->
-            <div id="fontOptions">
-                <label for="fontSize">Font Size:</label>
-                <select id="fontSize">
-                    <option value="12px">12px</option>
-                    <option value="14px">14px</option>
-                    <option value="16px">16px</option>
-                    <option value="18px">18px</option>
-                    <option value="20px">20px</option>
-                    <option value="24px">24px</option>
-                    <option value="28px">28px</option>
-                    <option value="32px">32px</option>
-                    <option value="36px">36px</option>
+        <div class="main">
+            <div class="toolbar">
+                <select class="notebookSelect" name="File">
+                    <option value="">File</option>
+                    <option value="newDocument">New Document</option>
+                    <option value="saveOption">Save</option>
+                    <option value="print">Print</option>
+                    <option value="exportPdf">Export PDF</option>
+                </select>
+                <select class="notebookSelect" name="Edit">
+                    <option value="">Edit</option>
+                    <option value="cut">Cut</option>
+                    <option value="copy">Copy</option>
+                    <option value="paste">Paste</option>
+                    <option value="selectAll">Select All</option>
+                    <option value="find">Find</option>
+                </select>
+                <select class="notebookSelect" name="Insert">
+                    <option value="">Insert</option>
+                    <option value="link">Link</option>
+                </select>
+                <select class="notebookSelect" name="Format">
+                    <option value="">Format</option>
+                    <option value="fontSize">Font Size</option>
+                    <option value="fontColor">Font Color</option>
+                </select>
+                <select class="notebookSelect" name="View">
+                    <option value="">View</option>
+                    <option value="zoomIn">Zoom In</option>
+                    <option value="zoomOut">Zoom Out</option>
+                    <option value="fullScreen">Full Screen</option>
                 </select>
 
-                <label for="fontColor">Font Color:</label>
-                <input type="color" id="fontColor" name="fontColor" value="#000000">
+                <div id="fontOptions">
+                    <label for="fontSize">Size:</label>
+                    <select id="fontSize">
+                        <option value="12px">12px</option>
+                        <option value="14px">14px</option>
+                        <option value="16px" selected>16px</option>
+                        <option value="18px">18px</option>
+                        <option value="20px">20px</option>
+                        <option value="24px">24px</option>
+                        <option value="28px">28px</option>
+                        <option value="32px">32px</option>
+                        <option value="36px">36px</option>
+                    </select>
+                    <label for="fontColor">Color:</label>
+                    <input type="color" id="fontColor" value="#000000">
+                </div>
+
+                <button id="darkModeToggle">🌙</button>
+            </div>
+
+            <div class="action-buttons">
+                <button id="saveOption">Save</button>
+                <button id="exportPdf">Export PDF</button>
+                <button id="print">Print</button>
+                <button id="cut">Cut</button>
+                <button id="copy">Copy</button>
+                <button id="paste">Paste</button>
+                <button id="selectAll">Select All</button>
+                <button id="find">Find</button>
+            </div>
+
+            <hr class="toolbar-divider">
+
+            <div class="workspace">
+                <input type="text" id="notebookTitle" value="Untitled Document">
+                <textarea id="noteInput" placeholder="Start writing..."></textarea>
+                <div id="wordCount" class="word-count">0 words · 0 characters</div>
             </div>
         </div>
-
-        <div class="action-buttons">
-            <button id="newDocument">New Document</button>
-            <button id="saveOption">Save</button>
-            <button id="loadOption">Load</button>
-            <button id="print">Print</button>
-            <button id="cut">Cut</button>
-            <button id="copy">Copy</button>
-            <button id="paste">Paste</button>
-            <button id="selectAll">Select All</button>
-            <button id="find">Find</button>
-        </div>
-
-        <hr class="toolbar-divider">
-        
-
-        <div class="workspace">
-            <input type="text" id="notebookTitle" value="Untitled Document">
-            
-            <div id="textEditor">
-                 <textarea type="text" id="noteInput" placeholder="Start writing..."></textarea>
-            </div>
-        </div>
-
     </div>
-   
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+    <script src="script.js"></script>
 </body>
 </html>
