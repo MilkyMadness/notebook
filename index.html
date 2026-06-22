@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Notebook</title>
+</head>
+<body>
+    <h1>Notebook</h1>
+    <p>This is a simple notebook application.</p>
+    <input type="text" id="notebookTitle" placeholder="Enter notebook title...">
+    <br>
+    <select id="notebookSelect" name="File">
+        <option value="">File</option>
+        <option value="newDocument">New Document</option>
+        <option value="saveOption">Save</option>
+        <option value="loadOption">Load</option>
+        <option value="print">Print</option>
+    </select>
+        <select id="notebookSelect" name="Edit">
+        <option value="">Edit</option>
+        <option value="cut">Cut</option>
+        <option value="copy">Copy</option>
+        <option value="paste">Paste</option>
+        <option value="selectAll">Select All</option>
+        <option value="find">Find</option>
+    </select>
+    <select id="notebookSelect" name="Insert">
+        <option value="">Insert</option>
+        <option value="image">Image</option>
+        <option value="link">Link</option>
+    </select>
+    <br>
+    <div>
+        <button id="newDocument">New Document</button>
+        <button id="saveOption">Save</button>
+        <button id="loadOption">Load</button>
+        <button id="print">Print</button>
+        <button id="cut">Cut</button>
+        <button id="copy">Copy</button>
+        <button id="paste">Paste</button>
+        <button id="selectAll">Select All</button>
+        <button id="find">Find</button>
+
+    </div>
+    <div id="fontOptions">
+        <label for="fontSize">Font Size:</label>
+        <select id="fontSize">
+            <option value="12px">12px</option>
+            <option value="14px">14px</option>
+            <option value="16px">16px</option>
+            <option value="18px">18px</option>
+            <option value="20px">20px</option>
+            <option value="24px">24px</option>
+            <option value="28px">28px</option>
+            <option value="32px">32px</option>
+            <option value="36px">36px</option>
+        </select>
+
+        <label for="fontColor">Font Color:</label>
+        <input type="color" id="fontColor" name="fontColor" value="#000000">
+    </div>
+    <br>
+    <div id="textEditor">
+         <input type="text" id="noteInput" placeholder="Write your note here...">
+    </div>
+    
+   
+</body>
+</html>
